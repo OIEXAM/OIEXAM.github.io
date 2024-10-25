@@ -86,7 +86,7 @@ async function showresult(evt) {
       rollno.focus();
   }else{
     delete_child();
-    await getDirectory('/Files/',rollno.value);
+    await getDirectory('../Files/',rollno.value);
     document.querySelector(".popup").style.display = "block";
     document.getElementById("pdf-viewer").style.display='block';
   }
