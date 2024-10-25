@@ -1,5 +1,5 @@
 async function getDirectory(dirname,roll) {
-  const url = `https://api.github.com/repos/${OIEXAM}/${OIEXAM}/git/trees/master`;
+  const url = `https://api.github.com/repos/OIEXAM/OIEXAM/git/trees/master`;
   const list1 = await fetch(url).then(res => res.json());
   console.log(list1);
   let response = await fetch(dirname);
