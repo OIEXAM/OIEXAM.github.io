@@ -18,6 +18,7 @@
       <div class="popup"><span>Result is Processed Successfully</span>
         <button id="close">&times;</button>
       </div>
+
       <div class="cal" id="cal">
         <label for="number">Enter your Roll No</label>
         <input inputmode="numeric" pattern="[0-9]*" type="text" onkeypress="return onlyNumberkey(event)" maxlength="12"
@@ -26,8 +27,11 @@
       </div>
     </div>
   </div>
-  <div id="pdf-viewer"></div>
+  <div id="loader">
+    <div class="ring"></div>
+    <span class="load-text">Loading..</span>
   </div>
+  <div id="pdf-viewer"></div>
 </body>
 <script type="text/javascript" src="/index.js"></script>
 <!-- <script type="text/javascript" src="/static/js/mech.js"></script> -->
