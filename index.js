@@ -39,13 +39,15 @@ async function getDirectory(roll) {
                 }
             }
         }
-        console.log(pages)
-        const viewer = document.getElementById('pdf-viewer');
-        for (const page_num of pages) {
-            canvas = document.createElement("canvas");
-            canvas.className = 'pdf-page-canvas';
-            viewer.appendChild(canvas);
-            renderPage(page_num, canvas);
+        if (pages.length!=0){
+            console.log(pages)
+            const viewer = document.getElementById('pdf-viewer');
+            for (const page_num of pages) {
+                canvas = document.createElement("canvas");
+                canvas.className = 'pdf-page-canvas';
+                viewer.appendChild(canvas);
+                renderPage(page_num, canvas);
+            }
         }
         const scale = 1.8;
 
@@ -89,6 +91,11 @@ async function getDirectory(roll) {
             delete_child();
             document.getElementById("loader").style.display = 'flex';
             await getDirectory(rollno.value);
+            if (document.getElementById("pdf-viewer").childElementCount==0){
+                document.querySelector(".popup").firstChild.innerHTML = "No Result Found"
+            } else {
+                document.querySelector(".popup").firstChild.innerHTML = "Result is Processed Successfully"
+            }
             document.getElementById("loader").style.display = 'none';
             document.querySelector(".popup").style.display = "block";
             document.getElementById("pdf-viewer").style.display = 'block';
