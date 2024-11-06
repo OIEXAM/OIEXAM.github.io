@@ -15,6 +15,7 @@ async function getDirectory(roll) {
     }
 }
     async function getItems(src, roll_no) {
+        pdfjsLib.GlobalWorkerOptions.workerSrc = '/build/pdf.worker.js';
         const doc = await pdfjsLib.getDocument(src).promise
         let pages = [];
         for (page_num = 1; page_num <= doc.numPages; page_num++) {
