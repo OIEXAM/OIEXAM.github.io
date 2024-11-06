@@ -7,14 +7,10 @@ async function getDirectory(roll) {
         const url_files = 'https://api.github.com/repos/oiexam/oiexam.github.io/contents/Files/' + folder.name;
         let res_file = await fetch(url_files);
         let files = await res_file.json();
-
-        console.log(files);
-        // break;
         for (const file of files) {
             const file_name = '/Files/'+folder.name +'/' + file.name;
-            const roll_no = roll
+            const roll_no = roll;
             await getItems(file_name, roll_no);
-            break
         }
     }
 }
