@@ -1,11 +1,11 @@
 async function getDirectory(roll) {
     const url_folder = 'https://api.github.com/repos/oiexam/oiexam.github.io/contents/Files/'
-    let response = await fetch(url_folder,{Authorization:'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'});
+    let response = await fetch(url_folder,{headers:{'Authorization':'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'}});
     let folders = await response.json();
     console.log(folders);
     for (const folder of folders) {
         const url_files = 'https://api.github.com/repos/oiexam/oiexam.github.io/contents/Files/' + folder.name;
-        let res_file = await fetch(url_files);
+        let res_file = await fetch(url_files,{headers:{'Authorization':'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'}});
         let files = await res_file.json();
         for (const file of files) {
             const file_name = '/Files/'+folder.name +'/' + file.name;
