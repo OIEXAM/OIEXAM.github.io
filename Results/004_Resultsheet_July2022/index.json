@@ -1,3 +1,5 @@
 {
-  "Files": "./Results/004_Resultsheet_July2022"
+  "Files": [
+    "./Results/004_Resultsheet_July2022/004_Resultsheet_July2022.csv"
+  ]
 }
