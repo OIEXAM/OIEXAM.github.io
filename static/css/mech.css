@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+p {
+  font-size: 2rem;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 12px;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  color: #0c0505;
+  flex-direction: column;
+  background: aliceblue;
+}
+#navbar {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
+  width: 100%;
+  top: 0;
+  justify-content: space-around;
+  border: none;
+  background-color: azure;
+}
+
+.image img {
+  width: 100px;
+  height: auto;
+  border-radius: 50px;
+}
+.ancher-style {
+  display: block;
+  color: #ffffff;
+  font-weight: 500;
+  line-height: 50px;
+  padding: 0 15px;
+  margin: 0;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  font-size: 1.7rem;
+}
+.logo {
+  color: #0c0505;
+}
+.main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 30px 0;
+}
+.carret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 5px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #0c0505;
+  vertical-align: middle;
+}
+.branch {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  color: black;
+  background-color: white;
+  font-size: 1.7rem;
+}
+.popup {
+  background-color: #ffffff;
+  width: 420px;
+  height: 150px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-family: “Poppins”, sans-serif;
+  text-align: center;
+}
+.dropdown {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+.branch ul {
+  list-style: none;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 99999;
+  background: rgb(255, 47, 20);
+  border-radius: 10px;
+  position: absolute;
+  padding: 2px;
+  top: 100%;
+  width: 153px;
+  height: 200px;
+  overflow-y: scroll;
+  transition: 0.3s ease-in-out;
+}
+
+.branch ul li a:hover {
+  background: white;
+  color: #0c0505;
+  border-radius: 5px;
+}
+
+.dropdown:hover ul {
+  visibility: visible;
+  opacity: 1;
+}
+.hide {
+  display: none;
+}
+h2 {
+  margin-top: 10px;
+  font-size: 25px;
+}
+
+.cal {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+label {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: black;
+}
+.btn {
+  margin: 5px 0 5px 0;
+  border: 2px solid rgb(255, 81, 0);
+  border-radius: 10px;
+  width: 100px;
+  display: block;
+  min-height: 42px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 5px;
+  cursor: pointer;
+}
+#number {
+  height: 40px;
+  width: 250px;
+  padding: 5px auto;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  border: 2px solid red;
+  border-radius: 10px;
+}
+.table_container {
+  height: 200px;
+  margin: 5px 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+  color: #fff;
+  background: #23242a;
+  box-shadow: 0 1px 1px hsl(0deg, 0%, 0% / 0.075);
+  border-radius: 10px;
+}
+
+.table_container p {
+  margin: 10px;
+}
+
+.table_container::-webkit-scrollbar {
+  width: 8px;
+  background: #0d141f;
+  border-radius: 0 8px 8px 0;
+  height: 10px;
+}
+
+.table_container::-webkit-scrollbar-thumb {
+  background: #fbf7f2;
+  border-radius: 4px;
+  height: 22px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+table,
+th,
+td {
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+th,
+td {
+  width: 120px;
+  padding: 2px 5px;
+  border-bottom: 1px solid;
+}
+
+th span {
+  display: inline-block;
+  width: 120px;
+}
+
+td {
+  text-align: center;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+@media only screen and (max-width: 680px) {
+  .main-content {
+    width: 100vw;
+    margin: 0;
+    top: 100px;
+    padding: 10px;
+  }
+
+  .popup {
+    width: 370px;
+    top: 60%;
+    margin: auto;
+  }
+}
+@media only screen and (max-width: 410px) {
+  .sidenav {
+    top: 250px;
+  }
+
+  .popup {
+    width: 330px;
+    top: 75%;
+  }
+}

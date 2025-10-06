@@ -1,6 +1,6 @@
 {
   "Files": [
-    "./Results/004_Resultsheet_Aug2021/004_Resultsheet_Aug2021.csv",
-    "./Results/004_Resultsheet_Aug2021/2nd 2022.csv"
+    "Results\\004_Resultsheet_Aug2021\\004_Resultsheet_Aug2021.csv",
+    "Results\\004_Resultsheet_Aug2021\\2nd 2022.csv"
   ]
 }

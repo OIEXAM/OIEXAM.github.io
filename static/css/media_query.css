@@ -1,0 +1,100 @@
+@media screen and (max-width:800px) and (min-width:400px) {
+    .container {
+        width: 49%;
+    }
+    .main-container {
+        margin: 0 20px;
+    }
+    .images{
+        height:50vw;
+    }
+    .images .circle {
+        /*width: 20px;*/
+        /*height: 20px;*/
+        top : 44%;
+    }
+
+}
+
+
+
+@media screen and (max-width:400px) {
+    .main-container {
+        flex-direction: column;
+        margin: 0 15px;
+    }
+    .popup_screen{
+        z-index: 999999;
+        position: fixed;
+        background: rgba(255, 255, 255, 0.1);
+        /* backdrop-filter: blur(10px); */
+        width: 100%;
+        height: 70vh;
+    }
+    .popup{
+        width:500px;
+    }
+    .images{
+        height:216px;
+    }
+
+    .images .circle {
+        width: 20px;
+        height: 20px;
+        top : 44%;
+    }
+    .heading p{
+        font-size:1rem;
+    }
+    .center p{
+        font-size:30px;
+    }
+    .container {
+        width: 99%;
+    }
+    .Slider_container{
+        flex-wrap: wrap;
+    }
+
+    .property {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mobility,.pKa{
+        width: 95%;
+    }
+
+    .mobility input, .pKa input{
+        width: 60%;
+    }
+
+    .act_button {
+        margin: 0.2rem 0%;
+    }
+    .table_container {
+        width: 90%;
+    }
+    .Result {
+        flex-direction:column;
+    }
+    .Result p{
+        width:100%;
+    }
+    #predict {
+        width: 100%;
+        margin-top: 5px;
+    }
+    #next{
+        font-size: 0.5rem;
+    }
+    #previous{
+        font-size: 0.5rem;
+    }
+    .canvas_style {
+        width: 350px;
+        height: max-content;
+        margin: auto;
+        border: 2px solid;
+    }
+}
