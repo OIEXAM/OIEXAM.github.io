@@ -88,7 +88,9 @@ def read_pdf(path_to_pdf):
     print(pdf)
     all_tables = []
     print(pdf.pages)
+    print("Reading Pdf Files")
     for page_num, page in enumerate(pdf.pages):
+        print(f"Reading {page_num}")
         tb = page.extract_table({"text_line_dir": "btt"})
         if tb:
             cleaned_table = clean_table(tb)
@@ -98,10 +100,11 @@ def read_pdf(path_to_pdf):
 
 
 def write_files(table, filename):
+    print("Writing CSV Files")
     print(filename)
     combined_df = pd.concat(table, ignore_index=True)
     print(combined_df.head())
-    combined_df.to_csv(f"{filename}.csv", index=False, header=False)
+    combined_df.to_csv(filename, index=False, header=False)
 
 
 def get_folder(This_folder):
@@ -120,22 +123,19 @@ def read_files_path(This_folder):
         if Files:
             Out_Path = [];
             for file in Files:
-                print(pdfplumber.open(file))
-                print(file)
-                print(file.parts)
-                # table = read_pdf(path)
+                table = read_pdf(file)
                 Outpath = Path("./Results") / file.parts[1]
                 Outpath.mkdir(parents=True, exist_ok=True)
                 Output_filename = Outpath / f"{file.stem}.csv"
                 Out_Path.append(str(Output_filename))
-                print(Outpath)
-                print(Out_Path)
+                write_files(table,Output_filename)
+
             json_path = Outpath / "index.json"
             print(json_path)
             # # for input in Input_path:
             with open(json_path, "w") as f:
                 json.dump({"Files": Out_Path}, f, indent=2)
-
+        break;
 This_folder = Path("./Files")
 read_files_path(This_folder)
 print(This_folder)
