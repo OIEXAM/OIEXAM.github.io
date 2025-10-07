@@ -34,17 +34,7 @@ body {
   height: auto;
   border-radius: 50px;
 }
-.ancher-style {
-  display: block;
-  color: #ffffff;
-  font-weight: 500;
-  line-height: 50px;
-  padding: 0 15px;
-  margin: 0;
-  letter-spacing: 0.5px;
-  text-decoration: none;
-  font-size: 1.7rem;
-}
+
 .logo {
   color: #0c0505;
 }
@@ -84,6 +74,7 @@ body {
   border-radius: 8px;
   font-family: “Poppins”, sans-serif;
   text-align: center;
+  box-shadow: 0 0.5em 1em rgba(111, 188, 194, 0.2);
 }
 .dropdown {
   display: flex;
@@ -96,8 +87,10 @@ body {
   visibility: hidden;
   opacity: 0;
   z-index: 99999;
-  background: rgb(255, 47, 20);
-  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #363a43;
+  box-shadow: 0 0.5em 1em rgba(185, 250, 255, 0.2);
+  border-radius: 0.5em;
   position: absolute;
   padding: 2px;
   top: 100%;
@@ -106,17 +99,50 @@ body {
   overflow-y: scroll;
   transition: 0.3s ease-in-out;
 }
+.ancher-style {
+  display: block;
+  color: #1d1818;
+  font-weight: 500;
+  line-height: 50px;
+  padding: 0 15px;
+  margin: 0;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  font-size: 1.7rem;
+}
 
-.branch ul li a:hover {
-  background: white;
+.branch ul li::-webkit-scrollbar {
+  width: 8px;
+  background: #0d141f;
+  border-radius: 0 8px 8px 0;
+  height: 20px;
+}
+
+.branch ul li::-webkit-scrollbar-thumb {
+  background: #d67d09;
+  border-radius: 0 4px 4px 0;
+  height: 22px;
+}
+/* .branch ul li a {
   color: #0c0505;
+} */
+.branch ul li a:hover {
+  background: #181924a8;
+  color: #fff;
   border-radius: 5px;
 }
 
 .dropdown:hover ul {
   visibility: visible;
   opacity: 1;
+  transition: 0.3s ease-in-out;
 }
+.dropdown.clicked:hover ul {
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
 .hide {
   display: none;
 }
@@ -159,6 +185,9 @@ label {
   text-align: center;
   border: 2px solid red;
   border-radius: 10px;
+}
+#number:focus {
+  background-color: lightcoral;
 }
 .table_container {
   height: 200px;
