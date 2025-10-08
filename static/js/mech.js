@@ -107,13 +107,38 @@ function create_data(value) {
   }
   console.log(final_result);
   delete_table();
+  final_result.sort((a, b) => {
+    const dateA = parseNotificationDate(a[5]);
+    const dateB = parseNotificationDate(b[5]);
+    return dateB - dateA; // ascending order
+  });
   for (const j of final_result) {
     if (j) {
       create_table(j);
     }
   }
 }
-
+function parseNotificationDate(notificationStr) {
+  const match = notificationStr.match(/(\w{3})\/(\d{4})/); // e.g. "Dec/2024"
+  if (!match) return new Date(0); // fallback
+  const monthNames = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  const monthIndex = monthNames.indexOf(match[1]);
+  const year = parseInt(match[2]);
+  return new Date(year, monthIndex);
+}
 // function to create the table of a student for the input roll no
 function create_table(obj) {
   console.log(obj);
@@ -172,36 +197,3 @@ function delete_table() {
 }
 
 // show resutls function
-
-// function to read data for specific roll no.
-function read_data(data, value) {
-  let dat = [];
-  data.forEach((element) => {
-    let count = 0;
-    console.log(element);
-    for (let row of element) {
-      console.log(row);
-      if (row == "S.No.") {
-        const val = element.slice(0, 3).concat(element.slice(-3));
-        val.unshift("Exam_Year");
-        // console.log(val);
-        dat.push(val);
-        console.log(element.slice(0, 3).concat(element.slice(-3)));
-        break;
-      } else if (row === value) {
-        const val = element.slice(0, 3).concat(element.slice(-3));
-        const year = data[1][0].split(":");
-        val.unshift(year[1]);
-        // console.log(val);
-        dat.push(val);
-        console.log(dat);
-        break;
-      } else if (count === 5) {
-        break;
-      } else {
-        count = count + 1;
-      }
-    }
-  });
-  return dat;
-}
