@@ -110,7 +110,6 @@ function create_data(value) {
   for (const j of final_result) {
     if (j) {
       create_table(j);
-      console.log(j);
     }
   }
 }
@@ -143,7 +142,6 @@ function create_table(obj) {
   const tr = document.createElement("tr");
   // loop to create cells in row of table
   for (let j of obj) {
-    console.log(j);
     const td = document.createElement("td");
     td.appendChild(document.createTextNode(j));
     tr.appendChild(td);
