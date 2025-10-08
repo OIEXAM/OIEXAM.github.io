@@ -81,9 +81,23 @@ function create_data(value) {
   // console.log(data_file);
   if (csvData.length > 0) {
     csvData.forEach((row) => {
+      // console.log(csvData.indexOf(row));
       for (const cell of row) {
+        if (cell.includes("Notification No.")) {
+          Not_No = cell;
+          indx = csvData.indexOf(row);
+          console.log("Branch cell", cell);
+        }
+        if (cell.includes("Semester")) {
+          semester = cell;
+          console.log(csvData.indexOf(row));
+        }
         if (cell === value) {
+          console.log("Inside the cell");
+          console.log("Inside roll No", indx);
+          console.log(csvData.indexOf(row));
           const f = row.slice(1, 3).concat(row.slice(-3));
+          f.push(Not_No, semester);
           final_result.push(f);
           console.log(row);
           return;
