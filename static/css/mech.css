@@ -266,8 +266,6 @@ footer {
 
   .popup {
     width: 370px;
-    top: 60%;
-    margin: auto;
   }
 
   table {
@@ -279,10 +277,6 @@ footer {
     top: 250px;
   }
 
-  .popup {
-    width: 330px;
-    top: 75%;
-  }
 
   table {
     display: block;
