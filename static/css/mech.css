@@ -69,8 +69,9 @@ body {
 .popup {
   background-color: #ffffff;
   width: 420px;
-  height: 150px;
-  padding: 10px 20px;
+  height: 200px;
+  padding: 10px;
+  margin: 10px auto;
   border-radius: 8px;
   font-family: “Poppins”, sans-serif;
   text-align: center;
@@ -163,6 +164,7 @@ label {
   font-size: 1.5rem;
   font-weight: 600;
   color: black;
+  margin: 10px auto;
 }
 .btn {
   margin: 5px 0 5px 0;
@@ -186,15 +188,14 @@ label {
   border: 2px solid red;
   border-radius: 10px;
 }
-#number:focus {
-  background-color: lightcoral;
-}
+
 .table_container {
-  height: 200px;
+  height: 250px;
   margin: 5px 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  resize: vertical;
   overflow: auto;
   color: #fff;
   background: #23242a;
@@ -221,7 +222,6 @@ label {
 
 table {
   width: 100%;
-  display: block;
   border-collapse: collapse;
   font-size: 0.9rem;
 }
@@ -269,6 +269,10 @@ footer {
     top: 60%;
     margin: auto;
   }
+
+  table {
+    display: block;
+  }
 }
 @media only screen and (max-width: 410px) {
   .sidenav {
@@ -278,5 +282,9 @@ footer {
   .popup {
     width: 330px;
     top: 75%;
+  }
+
+  table {
+    display: block;
   }
 }
