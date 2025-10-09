@@ -2,7 +2,7 @@ let csvData = [];
 let dataLoaded = false;
 window.onload = async function () {
   await loadCSVData();
-  console.log(csvData);
+  // console.log(csvData);
 };
 
 // function to loadcsv data
@@ -10,12 +10,12 @@ async function loadCSVData(forceReload = false) {
   const fil = document.querySelector(".selected").innerText;
   const url = "./Results/" + fil + "/index.json";
   const response = await fetch(url);
-  console.log(response.ok);
+  // console.log(response.ok);
   if (!response.ok) {
     throw new Error("File not found");
   }
   const file_list = await response.json();
-  console.log(file_list.Files);
+  // console.log(file_list.Files);
   if (dataLoaded && !forceReload) {
     return csvData;
   }
@@ -66,7 +66,7 @@ dropdown.addEventListener("mouseleave", () => {
 
 function showresult(evt) {
   delete_table();
-  console.log(evt);
+  // console.log(evt);
   const rollno = evt.target.previousElementSibling;
   if (rollno.value.length < 7) {
     rollno.focus();
@@ -77,7 +77,7 @@ function showresult(evt) {
 
 function create_data(value) {
   let final_result = [];
-  console.log(value);
+  // console.log(value);
   // console.log(data_file);
   if (csvData.length > 0) {
     csvData.forEach((row) => {
@@ -86,34 +86,44 @@ function create_data(value) {
         if (cell.includes("Notification No.")) {
           Not_No = cell;
           indx = csvData.indexOf(row);
-          console.log("Branch cell", cell);
+          // console.log("Branch cell", cell);
         }
         if (cell.includes("Semester")) {
           semester = cell;
-          console.log(csvData.indexOf(row));
+          // console.log(csvData.indexOf(row));
         }
         if (cell === value) {
-          console.log("Inside the cell");
-          console.log("Inside roll No", indx);
-          console.log(csvData.indexOf(row));
+          // console.log("Inside the cell");
+          // console.log("Inside roll No", indx);
+          // console.log(csvData.indexOf(row));
           const f = row.slice(1, 3).concat(row.slice(-3));
           f.push(Not_No, semester);
           final_result.push(f);
-          console.log(row);
+          // console.log(row);
           return;
         }
       }
     });
   }
-  console.log(final_result);
-  delete_table();
+  // console.log(final_result);
+  // delete_table();
   final_result.sort((a, b) => {
     const dateA = parseNotificationDate(a[5]);
     const dateB = parseNotificationDate(b[5]);
     return dateB - dateA; // ascending order
   });
+  header = [
+    "Roll No",
+    "Name Father Name Mother Name",
+    "Sessional Marks",
+    "Total Marks",
+    "Result",
+    "Exam Year",
+    "Semester",
+  ];
+  final_result.unshift(header);
   for (const j of final_result) {
-    if (j) {
+    if (final_result.length > 1) {
       create_table(j);
     }
   }
@@ -141,7 +151,7 @@ function parseNotificationDate(notificationStr) {
 }
 // function to create the table of a student for the input roll no
 function create_table(obj) {
-  console.log(obj);
+  // console.log(obj);
   const tbl =
     document.getElementsByClassName("table_container")[0].lastElementChild;
   const p_ele =
@@ -183,7 +193,7 @@ function delete_table() {
     document.getElementsByClassName("table_container")[0].lastElementChild;
   const p_ele =
     document.getElementsByClassName("table_container")[0].firstElementChild;
-  if (tbl.childElementCount == 2) {
+  if (tbl.childElementCount >= 2) {
     tr = tbl.children[1];
     while (tr.hasChildNodes()) {
       tr.removeChild(tr.firstChild);

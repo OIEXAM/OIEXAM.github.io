@@ -197,9 +197,9 @@ label {
   align-items: center;
   resize: vertical;
   overflow: auto;
-  color: #fff;
-  background: #23242a;
-  box-shadow: 0 1px 1px hsl(0deg, 0%, 0% / 0.075);
+  /* color: #fff; */
+  background: #ffffff;
+  box-shadow: 0 0.5em 1em rgba(111, 188, 194, 0.2);
   border-radius: 10px;
 }
 
@@ -228,17 +228,19 @@ table {
 table,
 th,
 td {
-  color: #fff;
+  /* color: #fff; */
   font-size: 1.1rem;
+  font-weight: 600;
 }
 
-th,
 td {
   width: 120px;
-  padding: 2px 5px;
-  border-bottom: 1px solid;
+  padding: 10px 5px;
+  border: 2px solid #ddd;
 }
-
+tr:nth-child(even) {
+  background-color: rgba(185, 250, 255, 0.2);
+}
 th span {
   display: inline-block;
   width: 120px;
@@ -276,7 +278,6 @@ footer {
   .sidenav {
     top: 250px;
   }
-
 
   table {
     display: block;
