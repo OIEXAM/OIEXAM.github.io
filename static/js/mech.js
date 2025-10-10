@@ -20,7 +20,7 @@ async function loadCSVData(forceReload = false) {
     return csvData;
   }
 
-  console.log("Loading Csv...");
+  console.log("Loading data...");
   const promises = file_list.Files.map(
     (file) =>
       new Promise((resolve, reject) => {
@@ -30,11 +30,11 @@ async function loadCSVData(forceReload = false) {
           skipEmptyLines: true,
           complete: (result) => {
             dataLoaded = true;
-            console.log("CSV loaded: ");
+            console.log("Data loaded: ");
             resolve(result.data);
           },
           error: (err) => {
-            console.error("Error Loading CSV");
+            console.error("Error Loading data");
             reject(err);
           },
         });
