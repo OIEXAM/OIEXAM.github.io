@@ -144,9 +144,6 @@ body {
   transition: 0.3s ease-in-out;
 }
 
-.hide {
-  display: none;
-}
 h2 {
   margin-top: 10px;
   font-size: 25px;
@@ -249,7 +246,109 @@ th span {
 td {
   text-align: center;
 }
+.create_provisional {
+  display: flex;
+  justify-content: flex-end;
+}
+.provisional_input {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  position: fixed;
+  height: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  z-index: 9999;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 8px;
+  font-family: “Poppins”, sans-serif;
+  text-align: center;
+  box-shadow: 0 0.5em 1em rgba(111, 188, 194, 0.2);
+}
+.close_btn {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  width: 100%;
+  margin: 10px;
+}
+.close_btn > label {
+  width: 100px;
+  margin: 10px;
+}
+.close_btn p {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+#close {
+  position: absolute;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  font-size: large;
+  font-weight: 800;
+  align-items: center;
+  cursor: pointer;
+}
 
+.name p {
+  width: 100%;
+  display: block;
+  margin: 1px 5px 20px 5px;
+  border-radius: 10px;
+}
+.name:nth-child(2) p {
+  background-color: rgb(231, 255, 220);
+  border: 1px solid rgba(192, 174, 113, 0.671);
+}
+.name:nth-child(3) p {
+  background-color: cornsilk;
+  border: 1px solid rgba(192, 174, 113, 0.671);
+}
+.name:nth-child(4) p {
+  background-color: rgb(220, 255, 253);
+  border: 1px solid rgba(192, 174, 113, 0.671);
+}
+.name label,
+input {
+  margin: 1px 5px;
+  padding: 5px;
+}
+.name > label {
+  cursor: pointer;
+}
+.generate_provisional {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+}
+.generate_provisional > button {
+  height: 80px;
+}
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
 footer {
   position: relative;
   left: 0;
@@ -257,7 +356,9 @@ footer {
   width: 100%;
   text-align: center;
 }
-
+.hide {
+  display: none;
+}
 @media only screen and (max-width: 680px) {
   .main-content {
     width: 100vw;
